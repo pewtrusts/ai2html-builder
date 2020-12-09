@@ -1,0 +1,105 @@
+.ai2html-figure {
+    margin-bottom: 2rem;
+}
+.container__col--70 .ai2html-figure:not(.full-width) {
+    max-width: 650px;
+}
+
+.ai2html-figure header span {
+    display: block;
+}
+
+.ai2html-figure header h1 {
+    font-weight: 600;
+    font-size: 1.75rem;
+    font-size: clamp(16px, 4.09vw, 1.75rem);
+    line-height: 1.3;
+    margin-bottom: 0;
+    line-height: 1.1;
+}
+
+.ai2html-figure .figure-label {
+    display: block;
+    font-size: 1rem;
+    font-size: clamp(13px, 3.2vw, 1rem);
+}
+.ai2html-subhead {
+    font-size: 1rem;
+    font-size: clamp(13px, 3.2vw, 1rem);
+    font-weight: bold;
+    margin-top: 9px;
+    margin-bottom: 9px;
+
+}
+.ai2html-figure .figure-dek {
+    opacity: .9;
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-size: clamp(14px, 3.5vw, 1.5rem);
+    white-space: normal !important;
+    line-height: 1.1;
+}
+.figure-note,
+.rich-text .figure-note {
+    font-size: 0.8rem;
+    font-size: clamp(10px, 3.17vw, 0.8rem);
+    line-height: 1.1;
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+
+.figure-note--source {
+    color: #767676;
+}
+
+.g-artboard[data-min-width="686"] {
+    display: none;
+}
+@media screen and (min-width: 686px) {
+    .g-artboard {
+        display: none;
+    }
+    .g-artboard[data-min-width="686"] {
+        display: block;
+    }
+}
+.g-artboard[data-max-width="685"] {
+    font-size: clamp(10px, 3.17vw, 16px) !important;
+    line-height: 1.188em !important;
+}
+.g-artboard[data-min-width="1"] p {
+    font-size: clamp(10px, 2.58vw, 16px) !important;
+    line-height: 1.188em !important;
+}
+@media screen and (max-width: 504px) {
+    .g-artboard[data-max-width="685"] p {
+        font-size: 10px !important;
+        font-size: clamp(10px, 3.17vw, 16px) !important;
+        line-height: 1.188em !important;
+    }
+    .figure-note,
+    .rich-text .figure-note  {
+        font-size: 10px;
+        font-size: clamp(10px, 3.17vw, 0.8rem);
+    } 
+    .ai2html-figure .figure-dek {
+        font-size: 14px;
+        font-size: clamp(14px, 3.5vw, 1.5rem);
+    }
+    .ai2html-figure .figure-label, .ai2html-subhead {
+        font-size: 13px;
+        font-size: clamp(13px, 3.2vw, 1rem);
+    }
+    .ai2html-figure header h1 {
+        font-size: 16px;
+        font-size: clamp(16px, 4.09vw, 1.75rem);
+    }
+}
+
+h2 {
+    margin-top: 1em;
+}
+.g-center-override {
+    margin-left: 0 !important;
+    transform: translateX(-50%);
+}

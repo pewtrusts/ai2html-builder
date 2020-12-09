@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+.vscode/
+ai/*.*
+!ai/ai2html-config.json
+!ai/example.ai
+src/ai2html-output/*.*
+!src/ai2html-output/example**
