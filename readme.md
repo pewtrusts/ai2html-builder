@@ -6,7 +6,7 @@ ai2html is a script, originally created by the New York Times,  that separates t
 ## How to set up this tool
 The ai2html builder is basically a package of files and Node.js scripts that compile the files into webpages. The tool launches a webserver locally on your machine that displays the webpage. When a file changes, the page automatically reloads to show the changes. To work, you will set up ai2html to place its output files into this package so that when you create or edit ai2html outputs they are automatically displayed on a replica of Pew's website. You can also navigate to another page that shows the content in multiple viewports at the same time.
 
-This tool as several dependencies that designers will need to install on their machines
+This tool as several dependencies that designers will need to install on their machines:
 1. Node.js
 2. npm
 3. Git
@@ -50,3 +50,32 @@ Then `cd` into that directory and run `npm install` to install of of this tool's
 cd ai2html-builder
 npm install
 ```
+## How to use this tool 
+Using this tool is relatively easy; the harder part is understanding the effects ai2html will have on the assets you create. Perhaps harder still is creating for a fluid-width environment, preferably with a mobile-first approach. More on that below.
+
+To use this tool, `cd` into its directory if you are not already there and run the command to compile the files into a webpage and start a webserver on your machine:
+
+```bash
+npm run dev
+```
+
+Open an up-to-date browser (Chrome or Firefox) and navigate to 127.0.0.1:8080. You should see the example asset:
+
+![example ai2html asset in webpage](example.png)
+
+### Multiple viewports
+To see how an asset will look on multiple screen sizes, navigate your browser to 127.0.0.1:8080/viewports/. On this page, you will be able to immediately see how any changes you make to an asset will show up on different devices.
+
+![example ai2html asset in multiple viewports](example-viewports.png)
+
+### Different column widths
+The main content of a standard Pew webpage will either be in a 70-percent-width column or 100-percent-width column. Most pages use the 70 percent, and that is the default for this tool. To use the tool with content meant for a 100-percent-width column, use this command below instead of `npm run dev`:
+
+```bash
+npm run dev --column=full
+```
+
+This will place the asset in a full-width column:
+
+![example ai2html asset in full-width column](example-full.png)
+
