@@ -72,10 +72,24 @@ To see how an asset will look on multiple screen sizes, navigate your browser to
 The main content of a standard Pew webpage will either be in a 70-percent-width column or 100-percent-width column. Most pages use the 70 percent, and that is the default for this tool. To use the tool with content meant for a 100-percent-width column, use this command below instead of `npm run dev`:
 
 ```bash
-npm run dev --column=full
+npm run dev100
 ```
 
 This will place the asset in a full-width column:
 
 ![example ai2html asset in full-width column](example-full.png)
 
+## How to use this tool, pt. 2: the Illustrator side
+The standardized way, so far, to use ai2html on Pew's website is to create two versions—two artboards—for each asset. This is a good middle ground that keeps the outputs flexible without overburdening the creation of every asset. The main issue to overcome is the large difference in screen sizes that each asset will need to be displayed on, legibly, from 320px wide to full desktop.
+
+The first artboard is for the asset as it will be displayed at any size less than 650px (when the viewport in less than 686px wide). This artboard must be set to be 468px wide. On the website, after being run through ai2html, the smaller asset will look exactly as designed only when it is that exact width (a viewport of 504px). At smaller sizes, all elements of the asset, including text, will scale down, but the proportions and spacing will be constant. At sizes greater than 468px but less than 650px, the art of the asset will scale up but the text size will not. Text, relative to the size of the asset, will *appear* smaller and the space between text will grow.
+
+The second artboard is for the asset as it will be displayed at 650px, when the viewport is 686px wide or wider. If the final destination you're designing for is a 70-percent-width column, this asset will only be displayed at 650px wide. If the destination is a 100-percent-wide column, the art of the asset will continue to scale up while the text stays the same size.
+
+### In pictures
+<figure>
+![two artboards in Illustrator](artboards.png)
+<figcaption>
+The standardized procedure so far uses two artboards for each asset, one set to 468px wide and the other to 650px wide.
+<figcaption>
+</figure>
