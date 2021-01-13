@@ -50,6 +50,13 @@ const plugins = [
         template: './src/viewports.ejs',
         filename: './viewports/index.html',
     }),
+    new HtmlWebpackPlugin({
+        title: 'Readme',
+        chunks: ['readme'],
+        subtitle: '',
+        template: './src/readme.ejs',
+        filename: './readme/index.html',
+    }),
 ];
 function returnJSUse() {
     return [{
@@ -117,7 +124,7 @@ const rules = [
         ]
     },
     {
-        test: /ai2html-output.*\.(png|jpe?g|svg)$/i,
+        test: /\.(png|jpe?g|svg)$/i,
         use: [{
             loader: 'url-loader',
             options: {
@@ -134,6 +141,19 @@ const rules = [
         exclude: /index.*\.html/,
         use: 'html-loader'
     },
+    {
+        test: /\.md$/,
+        use: [{
+            loader: 'html-loader'
+        },
+        {
+            loader: 'markdown-loader',
+            options: {
+                smartypants: true,
+                gfm: true
+            }
+        }]
+    }
 ];
 
 plugins.push(copyWebpack);
@@ -147,7 +167,8 @@ module.exports = () => {
         devtool: 'eval-source-map',
         entry: {
             index: './src/index.js',
-            viewports: './src/viewports.js'
+            viewports: './src/viewports.js',
+            readme: './src/readme.js'
         },
         mode,
         module: {

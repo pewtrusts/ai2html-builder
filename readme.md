@@ -87,9 +87,31 @@ The first artboard is for the asset as it will be displayed at any size less tha
 The second artboard is for the asset as it will be displayed at 650px, when the viewport is 686px wide or wider. If the final destination you're designing for is a 70-percent-width column, this asset will only be displayed at 650px wide. If the destination is a 100-percent-wide column, the art of the asset will continue to scale up while the text stays the same size.
 
 ### In pictures
-<figure>
-<img src="artboards.png" alt="two artboards in Illustrator" />
-<figcaption>
-The standardized procedure so far uses two artboards for each asset, one set to 468px wide and the other to 650px wide.
-<figcaption>
-</figure>
+![two artboards for one asset](artboards.png)
+
+*Above: The standardized procedure so far uses two artboards for each asset, one set to 468px wide and the other to 650px wide.*
+
+![ai2html output at 468px](output-468.png)
+
+*Above: the 468px-wide asset looks exactly as design after being run through ai2html only when it is 468px wide*
+
+![ai2html output at smaller size](output-smaller.png)
+
+*Above: the 468px-wide asset is scaled down, text included, to fit smaller viewports*
+
+![ai2html output at larger size](output-larger.png)
+
+*Above: the art of the 468px-wide asset is scaled up to fit larger viewports less than 686px wide. the text size does not change*
+
+![ai2html output at 650px](output-650.png)
+
+*Above: On viewports 686px wide or wider, the 650px-wide asset is shown. In 70-percent-width columns, the asset will not scale up or down.*
+
+![ai2html output at 990px](output-650-larger.png)
+
+*Above: In 100-percent-width columns, the art of the 650px-wide asset will scale up to fill the column while the text remains the same size*
+
+When designing for 100-percent-width columns, it may be useful to add a third, 990px wide artboard to design exactly how the asset should look at that size.
+
+
+
