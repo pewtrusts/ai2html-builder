@@ -88,7 +88,7 @@ The second artboard is for the asset as it will be displayed at 650px, when the 
 
 ### In pictures
 <figure>
-![two artboards in Illustrator](artboards.png)
+<img src="artboards.png" alt="two artboards in Illustrator" />
 <figcaption>
 The standardized procedure so far uses two artboards for each asset, one set to 468px wide and the other to 650px wide.
 <figcaption>
