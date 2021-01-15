@@ -50,7 +50,7 @@ Then `cd` into that directory and run `npm install` to install of of this tool's
 cd ai2html-builder
 npm install
 ```
-## How to use this tool 
+## How to start the tool 
 Using this tool is relatively easy; the harder part is understanding the effects ai2html will have on the assets you create. Perhaps harder still is creating for a fluid-width environment, preferably with a mobile-first approach. More on that below.
 
 To use this tool, `cd` into its directory if you are not already there and run the command to compile the files into a webpage and start a webserver on your machine:
@@ -79,10 +79,10 @@ This will place the asset in a full-width column:
 
 ![example ai2html asset in full-width column](example-full.png)
 
-## How to use this tool, pt. 2: the Illustrator side
+## Multiple artboards per asset in Adobe Illustrator 
 The standardized way, so far, to use ai2html on Pew's website is to create two versions—two artboards—for each asset. This is a good middle ground that keeps the outputs flexible without overburdening the creation of every asset. The main issue to overcome is the large difference in screen sizes that each asset will need to be displayed on, legibly, from 320px wide to full desktop.
 
-The first artboard is for the asset as it will be displayed at any size less than 650px (when the viewport in less than 686px wide). This artboard must be set to be 468px wide. On the website, after being run through ai2html, the smaller asset will look exactly as designed only when it is that exact width (a viewport of 504px). At smaller sizes, all elements of the asset, including text, will scale down, but the proportions and spacing will be constant. At sizes greater than 468px but less than 650px, the art of the asset will scale up but the text size will not. Text, relative to the size of the asset, will *appear* smaller and the space between text will grow.
+The first artboard is for the asset as it will be displayed at any size less than 650px (when the viewport in less than 686px wide). In the example, this artboard is set to 468px wide, which is a good middle ground between small mobile devices and the full 650px column; it happens to be Illustrator's pixel width of a 6.5in print asset (converted at 72 pixels per inch). On the website, after being run through ai2html, the smaller asset will look exactly as designed only when it is that exact width (a viewport of 504px). At smaller sizes, all elements of the asset, including text, will scale down, but the proportions and spacing will be constant. At sizes greater than 468px but less than 650px, the art of the asset will scale up but the text size will not. Text, relative to the size of the asset, will *appear* smaller and the space between text will grow.
 
 The second artboard is for the asset as it will be displayed at 650px, when the viewport is 686px wide or wider. If the final destination you're designing for is a 70-percent-width column, this asset will only be displayed at 650px wide. If the destination is a 100-percent-wide column, the art of the asset will continue to scale up while the text stays the same size.
 
@@ -101,7 +101,7 @@ The second artboard is for the asset as it will be displayed at 650px, when the 
 
 ![ai2html output at larger size](output-larger.png)
 
-*Above: the art of the 468px-wide asset is scaled up to fit larger viewports less than 686px wide. the text size does not change*
+*Above: the art of the 468px-wide asset is scaled up to fit larger viewports less than 686px wide. The text size does not change*
 
 ![ai2html output at 650px](output-650.png)
 
@@ -111,7 +111,17 @@ The second artboard is for the asset as it will be displayed at 650px, when the 
 
 *Above: In 100-percent-width columns, the art of the 650px-wide asset will scale up to fill the column while the text remains the same size*
 
-When designing for 100-percent-width columns, it may be useful to add a third, 990px wide artboard to design exactly how the asset should look at that size.
+When designing for 100-percent-width columns, it may be useful to add a third, 990px wide artboard to design exactly how the asset should look at that size. That process has not been standardized yet.
+
+## Detailed instructions for using Illustrator and ai2html with this tool
+To convert Illustrator files into HTML, all you need is the ai2html script. But to output HTML that is ready to be previewed in this tool, and ready to be placed on Pew's website, designers will need to follow some specific procedures.
+
+As described above, each asset will likely need more than one artboard unless the smallest 468px asset is sufficient for all screen sizes—not a bad goal to shoot for. The artboards must follow a naming convention so that the ai2html script can insert the right data for the artboards' visibility to be toggled on and off at the right time. Each artboard must have a name followed by a colon, followed by the minimum width at which the artboard should be displayed:
+
+`<name>:<minimum width>`
+
+The smalles
+
 
 
 
