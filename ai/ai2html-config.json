@@ -3,6 +3,7 @@
     "html_output_path": "../src/ai2html-output/",
     "local_preview_template": "../ai2html-template.html",
     "override_static_svg": false,
+    "image_format": "svg",
     "settings_block": [
         "image_format",
         "override_static_svg",

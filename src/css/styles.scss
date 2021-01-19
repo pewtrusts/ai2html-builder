@@ -64,23 +64,20 @@
     }
 }
 .g-artboard[data-max-width="685"] {
-    font-size: clamp(10px, 3.17vw, 16px) !important;
+    font-size: clamp(10px, 3vw, 12.5px) !important;
     line-height: 1.188em !important;
 }
-.g-artboard[data-min-width="1"] p {
-    font-size: clamp(10px, 2.58vw, 16px) !important;
-    line-height: 1.188em !important;
-}
-@media screen and (max-width: 504px) {
+
+@media screen and (max-width: 416px) {
     .g-artboard[data-max-width="685"] p {
         font-size: 10px !important;
-        font-size: clamp(10px, 3.17vw, 16px) !important;
+        font-size: clamp(10px, 3vw, 12.5px) !important;
         line-height: 1.188em !important;
     }
     .figure-note,
     .rich-text .figure-note  {
         font-size: 10px;
-        font-size: clamp(10px, 3.17vw, 0.8rem);
+        font-size: clamp(10px, 3vw, 0.8rem);
     } 
     .ai2html-figure .figure-dek {
         font-size: 0.85rem;
