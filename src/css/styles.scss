@@ -1,8 +1,8 @@
+/*
+ * hed, dek, notes, and source
+ */
 .ai2html-figure {
     margin-bottom: 2rem;
-}
-.container__col--70 .ai2html-figure:not(.full-width) {
-    max-width: 650px;
 }
 
 .ai2html-figure header span {
@@ -16,7 +16,6 @@
     margin-bottom: 0.25em;
     line-height: 1.1;
 }
-
 .ai2html-figure .figure-label {
     display: block;
     font-size: 1rem;
@@ -51,25 +50,17 @@
 .figure-note--source {
     color: #767676;
 }
+/* 
+ * variable text sizes, etc
+ */
 
-.g-artboard[data-min-width="686"] {
-    display: none;
-}
-@media screen and (min-width: 686px) {
-    .g-artboard {
-        display: none;
-    }
-    .g-artboard[data-min-width="686"] {
-        display: block;
-    }
-}
-.g-artboard[data-max-width="685"] {
+ .g-artboard p {
     font-size: clamp(10px, 3vw, 12.5px) !important;
     line-height: 1.188em !important;
 }
 
 @media screen and (max-width: 416px) {
-    .g-artboard[data-max-width="685"] p {
+    .g-artboard p {
         font-size: 10px !important;
         font-size: clamp(10px, 3vw, 12.5px) !important;
         line-height: 1.188em !important;
@@ -92,11 +83,87 @@
         font-size: clamp(1.1rem, 3.06vw, 1.32rem);
     }
 }
-
-h2 {
-    margin-top: 1em;
+.g-artboard {
+    display: none;
 }
-.g-center-override {
-    margin-left: 0 !important;
-    transform: translateX(-50%);
+/* 
+ * 70 percent columns only, 650px max
+ */
+ .container__col--70 {
+     .ai2html-figure:not(.full-width) {
+         max-width: 650px;
+     }
+}
+ 
+/*
+      * has mobile and print artboards
+      */
+    .has-print.has-mobile {
+        .g-artboard.mobile {
+            display: block;
+        }
+        @media screen and (min-width: 686px) {
+            .g-artboard.mobile {
+                display: none;
+            }
+            .g-artboard.print {
+                display: block;
+            }
+        }
+    }
+    .has-print:not(.has-mobile) {
+        .g-artboard.print {
+            display: block;
+        }
+    }
+    .has-mobile:not(.has-print) {
+        .g-artboard.mobile {
+            display: block;
+        }
+    }
+ //}
+/*
+ * 100 percent columns only , 990px max
+ */
+.container--100 {
+    .ai2html:not(.has-full):not(.has-medium) {
+            max-width: 650px;
+    }
+    .has-medium {
+        .g-artboard.print {
+            display: none;
+        }
+        @media screen and (min-width: 686px) {
+            .g-artboard.mobile {
+                display: none;
+            }
+            .g-artboard.medium {
+                display: block;
+            }
+        }
+        &.has-full {
+            @media screen and (min-width: 991px) {
+                .g-artboard.medium {
+                    display: none;
+                }
+                .g-artboard.full {
+                    display: block;
+                }
+            }
+        }
+    }
+    .has-full:not(.has-medium){
+        .g-artboard.print {
+            display: none;
+        }
+        @media screen and (min-width: 686px) {
+            .g-artboard.mobile {
+                display: none;
+            }
+            .g-artboard.full {
+                display: block;
+            }
+        }
+    }
+    
 }

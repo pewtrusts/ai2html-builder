@@ -40,7 +40,15 @@ const plugins = [
         title: '[Title]',
         subtitle: '[Subtitle]',
         chunks: ['index'],
-        template: process.env.column == 'full' ? './src/index-100.html' : './src/index-70-30.html',
+        template: './src/index-70-30.html',
+        inject: false,
+    }),
+    new HtmlWebpackPlugin({
+        title: '[Title]',
+        subtitle: '[Subtitle]',
+        chunks: ['index'],
+        template: './src/index-100.html',
+        filename: './full/index.html',
         inject: false,
     }),
     new HtmlWebpackPlugin({
@@ -167,6 +175,7 @@ module.exports = () => {
         devtool: 'eval-source-map',
         entry: {
             index: './src/index.js',
+         //   full: './src/index.js',
             viewports: './src/viewports.js',
             readme: './src/readme.js'
         },
