@@ -50,38 +50,43 @@
 .figure-note--source {
     color: #767676;
 }
+/*.g-dark-shadow {
+    text-shadow: 1px 1px rgba(0,0,0,0.3), -1px 1px rgba(0,0,0,0.3), -1px -1px rgba(0,0,0,0.3), 1px -1px rgba(0,0,0,0.3);
+}*/
 /* 
  * variable text sizes, etc
  */
+.ai2html:not(.preserve-text-sizes) {
 
- .g-artboard p {
-    font-size: clamp(10px, 3vw, 12.5px) !important;
-    line-height: 1.188em !important;
-}
-
-@media screen and (max-width: 416px) {
     .g-artboard p {
-        font-size: 10px !important;
-        font-size: clamp(10px, 3vw, 12.5px) !important;
-        line-height: 1.188em !important;
-    }
-    .figure-note,
-    .rich-text .figure-note  {
-        font-size: 10px;
-        font-size: clamp(10px, 3vw, 0.8rem);
-    } 
-    .ai2html-figure .figure-dek {
-        font-size: 0.85rem;
-        font-size: clamp(1rem, 2.636vw, 1.13rem);
-    }
-    .ai2html-figure .figure-label, .ai2html-subhead {
-        font-size: 13px;
-        font-size: clamp(13px, 3.2vw, 1rem);
-    }
-    .ai2html-figure header h1 {
-        font-size: 1rem;
-        font-size: clamp(1.1rem, 3.06vw, 1.32rem);
-    }
+       font-size: clamp(10px, 3vw, 12.5px) !important;
+       line-height: 1.188em !important;
+   }
+   
+   @media screen and (max-width: 416px) {
+       .g-artboard p {
+           font-size: 10px !important;
+           font-size: clamp(10px, 3vw, 12.5px) !important;
+           line-height: 1.188em !important;
+       }
+       .figure-note,
+       .rich-text .figure-note  {
+           font-size: 10px;
+           font-size: clamp(10px, 3vw, 0.8rem);
+       } 
+       .ai2html-figure .figure-dek {
+           font-size: 0.85rem;
+           font-size: clamp(1rem, 2.636vw, 1.13rem);
+       }
+       .ai2html-figure .figure-label, .ai2html-subhead {
+           font-size: 13px;
+           font-size: clamp(13px, 3.2vw, 1rem);
+       }
+       .ai2html-figure header h1 {
+           font-size: 1rem;
+           font-size: clamp(1.1rem, 3.06vw, 1.32rem);
+       }
+   }
 }
 .g-artboard {
     display: none;
