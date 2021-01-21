@@ -28,7 +28,7 @@ const copyWebpack =
         from: 'assets/',
         context: 'src',
         to: 'assets/',
-        ignore: ['Pew/css/**/*.*','Pew/fonts/**/*.*']
+        ignore: ['Pew/css/**/*.*']
     }, {
         from: 'assets/Pew/css/',
         context: 'src',
