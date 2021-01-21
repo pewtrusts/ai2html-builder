@@ -47,29 +47,29 @@ const copyWebpack =
 
 const plugins = [
     new HtmlWebpackPlugin({
-        title: '[Title]',
-        subtitle: '[Subtitle]',
+        title: 'ai2html Builder Example Output',
+        subtitle: '70 percent column',
         chunks: ['index'],
         template: './src/index-70-30.html',
         inject: false,
     }),
     new HtmlWebpackPlugin({
-        title: '[Title]',
-        subtitle: '[Subtitle]',
+        title: 'ai2html Builder Example Output',
+        subtitle: '100 percent column',
         chunks: ['index'],
         template: './src/index-100.html',
         filename: './full/index.html',
         inject: false,
     }),
     new HtmlWebpackPlugin({
-        title: 'Viewports',
+        title: 'ai2html Builder Example Output',
         chunks: ['viewport'],
-        subtitle: '',
+        subtitle: 'Multiple viewports',
         template: './src/viewports.ejs',
         filename: './viewports/index.html',
     }),
     new HtmlWebpackPlugin({
-        title: 'Readme',
+        title: 'ai2html Builder Readme',
         chunks: ['readme'],
         subtitle: '',
         template: './src/readme.ejs',

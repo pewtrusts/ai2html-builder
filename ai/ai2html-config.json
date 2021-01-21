@@ -6,6 +6,7 @@
     "override_auto_static": "false",
     "preserve_text_sizes": "false",
     "image_format": "svg",
+    "inline_svg":true,
     "print_text_factor": 1.389,
     "settings_block": [
         "image_format",
