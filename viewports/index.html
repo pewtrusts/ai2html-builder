@@ -18,21 +18,28 @@
         .wrapper::before {
             content: 'width: ' attr(width);
         }
+        .note {
+            height: 55px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div width="320" class="wrapper">
-            <iframe src="./.." width="320" style="height: calc(100vh - 5rem);"></iframe>
+            <p class="note">Small mobile screen. Text shrinks down to ~10px.</p>
+            <iframe src="./.." width="320" style="height: calc(100vh - 145px);"></iframe>
         </div>
         <div width="416" class="wrapper">
-            <iframe src="./.." width="416" style="height: calc(100vh - 5rem);"></iframe>
+            <p class="note">Asset matches the size and design of the mobile artboard. Text is 12.5px</p>
+            <iframe src="./.." width="416" style="height: calc(100vh - 145px);"></iframe>
         </div>
         <div width="685" class="wrapper">
-            <iframe src="./.." width="685" style="height: calc(100vh - 5rem);"></iframe>
+            <p class="note">Largest rendering of the mobile artboard, greatest spacing out of elements as artwork scales up. Text remains 12.5px. Most mobile devices will size between the first and second frames; most tablets will size like the fourth. Renderings like this will be relatively uncommon.</p>
+            <iframe src="./.." width="685" style="height: calc(100vh - 145px);"></iframe>
         </div>
         <div width="1030" class="wrapper">
-            <iframe src="./.." width="1030" style="height: calc(100vh - 5rem);"></iframe>
+            <p class="note">Asset matches the 6.5 inch artboard. Text size is proportional to text in the original asset.</p>
+            <iframe src="./.." width="1030" style="height: calc(100vh - 145px);"></iframe>
         </div>
     </div>
 </body>
