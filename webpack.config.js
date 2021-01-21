@@ -28,7 +28,7 @@ const copyWebpack =
         from: 'assets/',
         context: 'src',
         to: 'assets/',
-        ignore: ['Pew/css/**/*.*']
+        ignore: ['Pew/css/**/*.*','Pew/fonts/**/*.*']
     }, {
         from: 'assets/Pew/css/',
         context: 'src',
@@ -87,7 +87,22 @@ const rules = [
             test: /\.js$|\.mjs$/,
             use: returnJSUse()
         },
-    
+    {
+        test: /\.(woff|woff2)$/,
+        use: ['file-loader']
+    },
+    {
+        test: /\.css$/,
+        use: [
+            'style-loader',
+            {
+                loader: 'css-loader',
+                options: {
+                    modules: false
+                }
+            }
+        ]
+    },
     {
         test: /\.scss$/,
         exclude: /src\/css\/styles\.scss$/,

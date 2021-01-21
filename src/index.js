@@ -1,5 +1,7 @@
 /* eslint no-unused-vars: warn */
 /* eslint no-undef: warn */
+
+import './css/fonts.css';
 import './css/styles.scss';
 
 const root = document.querySelector('#render-here');
