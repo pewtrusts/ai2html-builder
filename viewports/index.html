@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewports</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+        }
+        .wrapper {
+            margin: 1rem;
+        }
+        .wrapper::before {
+            content: 'width: ' attr(width);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div width="320" class="wrapper">
+            <iframe src="/" width="320" style="height: calc(100vh - 5rem);"></iframe>
+        </div>
+        <div width="416" class="wrapper">
+            <iframe src="/" width="416" style="height: calc(100vh - 5rem);"></iframe>
+        </div>
+        <div width="685" class="wrapper">
+            <iframe src="/" width="685" style="height: calc(100vh - 5rem);"></iframe>
+        </div>
+        <div width="1030" class="wrapper">
+            <iframe src="/" width="1030" style="height: calc(100vh - 5rem);"></iframe>
+        </div>
+    </div>
+</body>
+</html>
