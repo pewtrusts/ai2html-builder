@@ -79,12 +79,15 @@ This will place the asset in a full-width column:
 
 ![example ai2html asset in full-width column](example-full.png)
 
-## Multiple artboards per asset in Adobe Illustrator 
-The standardized way, so far, to use ai2html on Pew's website is to create two versions—two artboards—for each asset. This is a good middle ground that keeps the outputs flexible without overburdening the creation of every asset. The main issue to overcome is the large difference in screen sizes that each asset will need to be displayed on, legibly, from 320px wide to full desktop.
+## Multiple artboards per asset in Adobe Illustrator
+**This info is out of date and needs to be updated**
 
-The first artboard is for the asset as it will be displayed at any size less than 650px (when the viewport in less than 686px wide). In the example, this artboard is set to 468px wide, which is a good middle ground between small mobile devices and the full 650px column; it happens to be Illustrator's pixel width of a 6.5in print asset (converted at 72 pixels per inch). On the website, after being run through ai2html, the smaller asset will look exactly as designed only when it is that exact width (a viewport of 504px). At smaller sizes, all elements of the asset, including text, will scale down, but the proportions and spacing will be constant. At sizes greater than 468px but less than 650px, the art of the asset will scale up but the text size will not. Text, relative to the size of the asset, will *appear* smaller and the space between text will grow.
+<del>The standardized way, so far, to use ai2html on Pew's website is to create two versions—two artboards—for each asset. This is a good middle ground that keeps the outputs flexible without overburdening the creation of every asset. The main issue to overcome is the large difference in screen sizes that each asset will need to be displayed on, legibly, from 320px wide to full desktop.
 
-The second artboard is for the asset as it will be displayed at 650px, when the viewport is 686px wide or wider. If the final destination you're designing for is a 70-percent-width column, this asset will only be displayed at 650px wide. If the destination is a 100-percent-wide column, the art of the asset will continue to scale up while the text stays the same size.
+<del>The first artboard is for the asset as it will be displayed at any size less than 650px (when the viewport in less than 686px wide). In the example, this artboard is set to 468px wide, which is a good middle ground between small mobile devices and the full 650px column; it happens to be Illustrator's pixel width of a 6.5in print asset (converted at 72 pixels per inch). On the website, after being run through ai2html, the smaller asset will look exactly as designed only when it is that exact width (a viewport of 504px). At smaller sizes, all elements of the asset, including text, will scale down, but the proportions and spacing will be constant. At sizes greater than 468px but less than 650px, the art of the asset will scale up but the text size will not. Text, relative to the size of the asset, will *appear* smaller and the space between text will grow.
+
+<del>The second artboard is for the asset as it will be displayed at 650px, when the viewport is 686px wide or wider. If the final destination you're designing for is a 70-percent-width column, this asset will only be displayed at 650px wide. If the destination is a 100-percent-wide column, the art of the asset will continue to scale up while the text stays the same size.
+
 
 ### In pictures
 ![two artboards for one asset](artboards.png)
@@ -120,7 +123,6 @@ As described above, each asset will likely need more than one artboard unless th
 
 `<name>:<minimum width>`
 
-The smalles
 
 
 
