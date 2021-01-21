@@ -1,22 +1,23 @@
 {
-  "name": "TKTKTKTKTKTK",
+  "name": "ai2html-builder",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --content-base public --host 127.0.0.1 --port 8080",
-    "dev100": "cross-env NODE_ENV=development column=full webpack-dev-server --content-base public --host 127.0.0.1 --port 8080"
+    "dev100": "cross-env NODE_ENV=development column=full webpack-dev-server --content-base public --host 127.0.0.1 --port 8080",
+    "preview": "cross-env NODE_ENV=preview webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pewtrusts/TKTKTKTKTKTK.git"
+    "url": "git+https://github.com/pewtrusts/ai2html-builder.git"
   },
   "author": "John Osterman",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pewtrusts/TKTKTKTKTKTK/issues"
+    "url": "https://github.com/pewtrusts/ai2html-builder/issues"
   },
-  "homepage": "https://github.com/pewtrusts/TKTKTKTKTKTK#readme",
+  "homepage": "https://github.com/pewtrusts/ai2html-builder#readme",
   "devDependencies": {
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",

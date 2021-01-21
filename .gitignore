@@ -6,3 +6,4 @@ ai/*.*
 !ai/example.ai
 src/ai2html-output/*.*
 !src/ai2html-output/example**
+preview/

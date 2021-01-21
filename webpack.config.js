@@ -1,10 +1,10 @@
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const mode = process.env.NODE_ENV;
+const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
 const path = require('path');
 const outputFolder = process.env.NODE_ENV === 'preview' ? 'preview/' : process.env.NODE_ENV === 'localpreview' ? 'localpreview/' : 'dist/';
-
+const repoName = 'ai2html-builder';
 const copyWebpack =
     new CopyWebpackPlugin([{
         from: '**/*.png',
@@ -33,6 +33,16 @@ const copyWebpack =
         from: 'assets/Pew/css/',
         context: 'src',
         to: 'assets/Pew/css/',
+        transform(content) {
+            if (process.env.NODE_ENV === 'preview') {
+                // this modifies the content of the files being copied; here making sure url('/...') is changed so that it will
+                // work on gitHub pages where oublic path is /{repoName}/
+                // also changes references to 'pew' to refer to 'Pew'
+                return content.toString().replace(/url\("\/([^/])/g, 'url("/' + repoName + '/$1').replace(/\/pew\//g, '/Pew/');
+            } else {
+                return content.toString();
+            }
+        }
     }]);
 
 const plugins = [
