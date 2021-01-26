@@ -5,7 +5,7 @@ const mode = process.env.NODE_ENV === 'development' ? 'development' : 'productio
 const path = require('path');
 const outputFolder = process.env.NODE_ENV === 'preview' ? 'preview/' : process.env.NODE_ENV === 'localpreview' ? 'localpreview/' : 'dist/';
 const repoName = 'ai2html-builder';
-const publicPath = process.env.NODE_ENV === 'preview' ? '/' + repoName + '/' : '';
+const publicPath = process.env.NODE_ENV === 'preview' ? '/' + repoName + '/' : '/';
 const copyWebpack =
     new CopyWebpackPlugin([{
         from: '**/*.png',
@@ -53,6 +53,7 @@ const plugins = [
         chunks: ['index'],
         template: './src/index-70-30.html',
         inject: false,
+        publicPath
     }),
     new HtmlWebpackPlugin({
         title: 'ai2html Builder Example Output',
@@ -61,6 +62,7 @@ const plugins = [
         template: './src/index-100.html',
         filename: './full/index.html',
         inject: false,
+        publicPath
     }),
     new HtmlWebpackPlugin({
         title: 'ai2html Builder Example Output',
@@ -68,6 +70,7 @@ const plugins = [
         subtitle: 'Multiple viewports',
         template: './src/viewports.ejs',
         filename: './viewports/index.html',
+        publicPath
     }),
     new HtmlWebpackPlugin({
         title: 'ai2html Builder Readme',
@@ -75,6 +78,7 @@ const plugins = [
         subtitle: '',
         template: './src/readme.ejs',
         filename: './readme/index.html',
+        publicPath
     }),
     new HtmlWebpackPlugin({
         title: 'ai2html Builder Presentation',
@@ -83,6 +87,7 @@ const plugins = [
         template: './src/index-70-30.html',
         filename: './presentation/index.html',
         inject: false,
+        publicPath
     }),
     new HtmlWebpackPlugin({
         title: 'ai2html Builder test',
@@ -91,6 +96,7 @@ const plugins = [
         template: './src/index-70-30.html',
         filename: './test/index.html',
         inject: true,
+        publicPath
     }),
 ];
 function returnJSUse() {
