@@ -89,15 +89,7 @@ const plugins = [
         inject: false,
         publicPath
     }),
-    new HtmlWebpackPlugin({
-        title: 'ai2html Builder test',
-        chunks: ['test'],
-        subtitle: '',
-        template: './src/index-70-30.html',
-        filename: './test/index.html',
-        inject: true,
-        publicPath
-    }),
+    
 ];
 function returnJSUse() {
     return [{
