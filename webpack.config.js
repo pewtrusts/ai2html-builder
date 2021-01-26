@@ -75,6 +75,14 @@ const plugins = [
         template: './src/readme.ejs',
         filename: './readme/index.html',
     }),
+    new HtmlWebpackPlugin({
+        title: 'ai2html Builder Presentation',
+        chunks: ['presentation'],
+        subtitle: '',
+        template: './src/index-70-30.html',
+        filename: './presentation/index.html',
+        inject: false,
+    }),
 ];
 function returnJSUse() {
     return [{
@@ -105,7 +113,7 @@ const rules = [
     },
     {
         test: /\.scss$/,
-        exclude: /src\/css\/styles\.scss$/,
+        exclude: /src\/css\/.*\.scss$/,
         use: [
             /**
              * MiniCssExtractPlugin doesn't support HMR.
@@ -131,7 +139,7 @@ const rules = [
             }
         ]
     },{
-        test: /src\/css\/styles\.scss$/,
+        test: /src\/css\/.*\.scss$/,
         use: [
             /**
              * MiniCssExtractPlugin doesn't support HMR.
@@ -202,7 +210,8 @@ module.exports = () => {
             index: './src/index.js',
          //   full: './src/index.js',
             viewports: './src/viewports.js',
-            readme: './src/readme.js'
+            readme: './src/readme.js',
+            presentation: './src/presentation.js'
         },
         mode,
         module: {

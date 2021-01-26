@@ -5,7 +5,7 @@ import './css/fonts.css';
 import './css/styles.scss';
 
 const root = document.querySelector('#render-here');
-const ai2htmlContext = require.context('./ai2html-output/', false, /^[^-].*\.preview\.html$/);
+const ai2htmlContext = require.context('./ai2html-output/', false, /example.*\.preview\.html$/);
 function copyHandler(){
     const text = this.parentElement.querySelector('figure').outerHTML;
     navigator.clipboard.writeText(text).then(() => {
