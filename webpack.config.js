@@ -5,7 +5,7 @@ const mode = process.env.NODE_ENV === 'development' ? 'development' : 'productio
 const path = require('path');
 const outputFolder = process.env.NODE_ENV === 'preview' ? 'preview/' : process.env.NODE_ENV === 'localpreview' ? 'localpreview/' : 'dist/';
 const repoName = 'ai2html-builder';
-const publicPath = process.env.NODE_ENV === 'preview' ? '/' + repoName : '';
+const publicPath = process.env.NODE_ENV === 'preview' ? '/' + repoName + '/' : '';
 const copyWebpack =
     new CopyWebpackPlugin([{
         from: '**/*.png',
