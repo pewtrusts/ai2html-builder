@@ -5,6 +5,7 @@ const mode = process.env.NODE_ENV === 'development' ? 'development' : 'productio
 const path = require('path');
 const outputFolder = process.env.NODE_ENV === 'preview' ? 'preview/' : process.env.NODE_ENV === 'localpreview' ? 'localpreview/' : 'dist/';
 const repoName = 'ai2html-builder';
+const publicPath = process.env.NODE_ENV === 'preview' ? '/' + repoName : '';
 const copyWebpack =
     new CopyWebpackPlugin([{
         from: '**/*.png',
@@ -82,6 +83,14 @@ const plugins = [
         template: './src/index-70-30.html',
         filename: './presentation/index.html',
         inject: false,
+    }),
+    new HtmlWebpackPlugin({
+        title: 'ai2html Builder test',
+        chunks: ['test'],
+        subtitle: '',
+        template: './src/index-70-30.html',
+        filename: './test/index.html',
+        inject: true,
     }),
 ];
 function returnJSUse() {
@@ -211,7 +220,8 @@ module.exports = () => {
          //   full: './src/index.js',
             viewports: './src/viewports.js',
             readme: './src/readme.js',
-            presentation: './src/presentation.js'
+            presentation: './src/presentation.js',
+            test: './src/test.js',
         },
         mode,
         module: {
@@ -221,6 +231,7 @@ module.exports = () => {
             path: __dirname + '/' + outputFolder,
             filename: '[name].js?v=[hash:6]',
             chunkFilename: '[name].[id].js',
+            publicPath,
         },
         plugins,
         resolve: {
