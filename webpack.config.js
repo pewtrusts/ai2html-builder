@@ -219,7 +219,7 @@ module.exports = () => {
             viewports: './src/viewports.js',
             readme: './src/readme.js',
             presentation: './src/presentation.js',
-            test: './src/test.js',
+            
         },
         mode,
         module: {
