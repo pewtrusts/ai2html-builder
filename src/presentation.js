@@ -1,4 +1,5 @@
 import markdown from './presentation.md';
+import './css/fonts.css';
 import './css/presentation.scss';
 import './css/styles.scss';
 import unmodified from './ai2html-output/schematic-override.html';

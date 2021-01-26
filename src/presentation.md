@@ -20,8 +20,9 @@
 
 ### What's not
 * Becomes illegible at small sizes
+* Have to handle fonts carefully. Only typefaces available on the website can be used unless text is converted to outlines.
 
-## 3. default ai2html (for illustration)
+## 3. default ai2html (for illustration—does not work well on purpose)
 <div id="unmodified"></div>
 
 ### What's good
@@ -46,3 +47,4 @@
 ## What's not (but not really)
 * Two artboards needed, but no longer necessitates separate digital assets.
 * More artboards needed for 990px wide content.
+* Will need a solution for allowing users to grab an image with text—possible but not built yet.
