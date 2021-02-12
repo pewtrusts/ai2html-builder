@@ -7,27 +7,66 @@ The ai2html builder allows designers to immediately see how an Adobe Illustrator
 The ai2html builder is basically a package of files and Node.js scripts that compile the files into webpages. The tool launches a webserver locally on your machine that displays the webpage. When a file changes, the page automatically reloads to show the changes. To work, you will set up ai2html to place its output files into this package so that when you create or edit ai2html outputs they are automatically displayed on a replica of Pew's website. You can also navigate to another page that shows the content in multiple viewports at the same time.
 
 This tool as several dependencies that designers will need to install on their machines:
+3. git
 1. Node.js
 2. npm
-3. Git
 4. ai2html
 
-### Node and npm
-Node is Javascript runtime environment for your machine; npm is a package manager that simplifies installing and managing modules.
-
-The best way to install Node and npm is with nvm (Node version manager). Follow the [installation directions](https://github.com/nvm-sh/nvm#install--update-script) on its Github page. Copy-pasting the `curl` command will be easiest.
-
-After nvm is installed, run the command `nvm install node 14.15.4`. This will install Node and npm.
-
 ### Git
-Git is version control system for software development. For present purposes, its use is limited to cloning this tool's Github repository onto the designer's machine.
+Git is version control system for software development. For present purposes, its use is limited to cloning this tool's Github repository onto the designer's machine. It's also a dependency of the next step.
 
-To install Git, select the macOS installer from [Git's download page](https://git-scm.com/downloads).
+First, check to see is git is already installed on your machine. In your terminal, type `git --version`. If it is installed, you will be shown the version you have. If it is not installed, you should be prompted to install it. Follow those instructions if so.
+
+### Node and npm
+Node is Javascript runtime environment for your machine; npm is a package manager that simplifies installing and managing modules. The best way to install Node and npm is with nvm (Node version manager). First, check to see if it is already installed:
+
+type `nvm --version`
+
+If it is already installed you will see the version number and you can skip to the "install node" section below. If not, install nvm first.
+
+#### Install nvm
+
+The installation will attempt to add some lines to your terminal profile file and therefore needs a that file to be present. You may or may not already have one. The process is different depending on which OSX version you're on.
+
+**For MacOSX 10.14 (High Sierra) or earlier**
+
+Enter into the terminal:
+
+`touch ~/.bash_profile`
+
+If the file exists, it will do nothing; if it does not, the blank file will be created.
+
+**For MacOSX 10.15 (Catalina) or later**
+
+Enter into the terminal:
+
+`touch ~/.zshrc`
+
+If the file exists, it will do nothing; if it does not, the blank file will be created.
+
+Now you should be able to install Node and npm.  Follow the [installation directions](https://github.com/nvm-sh/nvm#install--update-script) on its Github page. Copy-pasting the `curl` command will be easiest.
+
+The installation depends on git being installed on your machine, which we did in step 1. If you get a pop-up asking you to install command line developer tools, follow those instructions to do so.
+
+After the `curl` command completes, close and reopen your terminal for the changes to take effect and then confirm that nvm is present:
+
+`nvm --version`
+
+If it is not working, try some of the troubleshooting steps at in the [installation directions](https://github.com/nvm-sh/nvm#install--update-script).
+
+#### Install node
+
+After nvm is installed, run the command `nvm install 14.15.4`. This will install Node and npm.
+
 
 ### ai2html
 As mentioned above, ai2html is the script for Adobe Illustrator that separates the text from artwork and allows for outputting multiple artboards for different breakpoints.
 
 Read more about ai2html and how to install it at the [ai2html website](http://ai2html.org/), **but use this link to [download the script](https://raw.githubusercontent.com/jostermanAtPEW/ai2html/master/ai2html.js)** rather than the one provided there. This version has changes that places text more accurately when it is scaled down; the original script does not anticipate text changing size dynamically. It also provides custom options described more fully below.
+
+To install the script, you need to place in this folder (your version of Illustrator might be different; if you have multiple versions installed, be sure place the script in the directory for the version you use):
+
+`/Applications/Adobe Illustrator CC 2020/Presets/en_US/Scripts/`
 
 ### Installing this tool
 Once all the above software is installed, you're ready to install this tool. You may install it anywhere; the instructions below install in in your home directory.
@@ -38,10 +77,10 @@ Open you terminal and navigate to your home directory:
 cd ~
 ```
 
-Then clone this repository using Git. It will be downloaded into `~/ai2html-builder/`.
+Then clone this repository using Git. It will be downloaded into `~/ai2html-builder/`. If you get a warning that the "authenticity of host 'github.com' can't be established," go ahead and enter "yes."
 
 ```bash
-git clone git@github.com:pewtrusts/ai2html-builder.git
+git clone https://github.com/pewtrusts/ai2html-builder.git
 ```
 
 Then `cd` into that directory and run `npm install` to install of of this tool's dependencies.
