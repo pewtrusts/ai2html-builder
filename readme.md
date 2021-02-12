@@ -83,12 +83,28 @@ Then clone this repository using Git. It will be downloaded into `~/ai2html-buil
 git clone https://github.com/pewtrusts/ai2html-builder.git
 ```
 
-Then `cd` into that directory and run `npm install` to install of of this tool's dependencies.
+The tool uses code shared with other Pew tools and that needs to be installed as a submodule. First enter into the directory:
 
 ```bash
 cd ai2html-builder
+```
+then:
+```bash
+git submodule init
+```
+
+and then:
+
+```bash
+git submodule update
+```
+
+Then run `npm install` to install the tool's dependencies.
+
+```bash
 npm install
 ```
+
 ## How to start the tool 
 Using this tool is relatively easy; the harder part is understanding the effects ai2html will have on the assets you create. Perhaps harder still is creating for a fluid-width environment, preferably with a mobile-first approach. More on that below.
 
