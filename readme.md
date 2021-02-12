@@ -7,10 +7,11 @@ The ai2html builder allows designers to immediately see how an Adobe Illustrator
 The ai2html builder is basically a package of files and Node.js scripts that compile the files into webpages. The tool launches a webserver locally on your machine that displays the webpage. When a file changes, the page automatically reloads to show the changes. To work, you will set up ai2html to place its output files into this package so that when you create or edit ai2html outputs they are automatically displayed on a replica of Pew's website. You can also navigate to another page that shows the content in multiple viewports at the same time.
 
 This tool as several dependencies that designers will need to install on their machines:
-3. git
+
+1. git
 1. Node.js
-2. npm
-4. ai2html
+1. npm
+1. ai2html
 
 ### Git
 Git is version control system for software development. For present purposes, its use is limited to cloning this tool's Github repository onto the designer's machine. It's also a dependency of the next step.
