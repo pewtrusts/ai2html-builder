@@ -24,6 +24,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     
+    - run: git submodule init
+    
+    - run: git submodule update
+    
     - run: npm install
     
     - run: npm run preview --if-present
