@@ -10,15 +10,23 @@ const copyWebpack =
     new CopyWebpackPlugin([{
         from: '**/*.png',
         context: 'src',
+        exclude: 'epubtest/',
         to: ''
     },{
         from: '**/*.jpg',
+        context: 'src',
+        exclude: 'epubtest/',
+        to: ''
+    },
+    {
+        from: 'epubtest/**/*.*',
         context: 'src',
         to: ''
     },
     {
         from: '**/*.svg',
         context: 'src',
+        exclude: 'epubtest/',
         to: ''
     },
         {
