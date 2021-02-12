@@ -2,6 +2,7 @@
 /* eslint no-undef: warn */
 
 import './css/fonts.css';
+import './../submodules/shared-css/styles.css';
 import './css/styles.scss';
 
 const root = document.querySelector('#render-here');
