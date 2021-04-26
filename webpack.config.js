@@ -54,7 +54,8 @@ const copyWebpack =
         }
     }]);
 
-const plugins = [
+
+    const plugins = [
     new HtmlWebpackPlugin({
         title: 'ai2html Builder Example Output',
         subtitle: '70 percent column',
